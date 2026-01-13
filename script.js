@@ -5,12 +5,12 @@
 /* ---------- Elements ---------- */
 const display = document.getElementById("display");
 
-const modeSwitch = document.getElementById("modeSwitch"); 
+const modeSwitch = document.getElementById("modeSwitch");
 const switchLabel = document.querySelector('label[for="modeSwitch"]');
 
 // ---------- Calculator Logic ---------- //
 function appendValue(value) {
-  
+
   const operators = ["+", "-", "*", "/"];
   const lastChar = display.value.slice(-1);
 
@@ -66,7 +66,7 @@ document.addEventListener("keydown", (e) => {
     return;
   }
 
-  if (key === "." ) {
+  if (key === ".") {
     appendValue(key);
     return;
   }
@@ -94,23 +94,17 @@ document.addEventListener("keydown", (e) => {
 function updateThemeUI(checked) {
   document.body.classList.toggle("light-mode", checked);
 
-  // update visible icon inside the label (so user sees moon/sun)
   if (switchLabel) {
     switchLabel.textContent = checked ? "🌞" : "🌙";
   }
 }
 
-// init on load — ensure icon matches the checkbox state
 if (modeSwitch) {
   updateThemeUI(modeSwitch.checked);
 
-  // when user toggles checkbox (clicking the label also toggles), update theme
   modeSwitch.addEventListener("change", (e) => {
     updateThemeUI(e.target.checked);
   });
-} else {
-  // fallback: if checkbox is missing, ensure label doesn't throw errors
-  if (switchLabel) switchLabel.textContent = "🌙";
 }
 
 /* ---------- Expose functions to global scope for HTML onclick ---------- */
@@ -122,4 +116,4 @@ window.calculateResult = calculateResult;
 /* ================================
    End of script.js
    ================================ */
-    
+
