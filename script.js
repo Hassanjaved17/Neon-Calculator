@@ -1,6 +1,6 @@
-// ================================
+
 // script.js — Calculator + Theme
-// ================================
+
 
 /* ---------- Elements ---------- */
 const display = document.getElementById("display");
@@ -104,8 +104,9 @@ if (modeSwitch) {
 
   modeSwitch.addEventListener("change", (e) => {
     updateThemeUI(e.target.checked);
-  });
+  }); 
 }
+
 
 /* ---------- Expose functions to global scope for HTML onclick ---------- */
 window.appendValue = appendValue;
@@ -113,7 +114,5 @@ window.clearDisplay = clearDisplay;
 window.deleteLast = deleteLast;
 window.calculateResult = calculateResult;
 
-/* ================================
-   End of script.js
-   ================================ */
+// End of script.js
 

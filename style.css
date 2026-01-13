@@ -4,7 +4,6 @@
   box-sizing: border-box;
 }
 
-/* ===== Background ===== */
 body {
   font-family: "Poppins", sans-serif;
   display: flex;
@@ -193,6 +192,11 @@ body.light-mode h1 {
   left: 26px;
   background: #333;
 }
+
+#modeSwitch {
+  display: none;
+}
+
 
 /* ===== Footer ===== */
 footer {
